@@ -117,7 +117,6 @@ export default function Footer() {
             ↑ Back to top
           </button>
         </div>
-        
       </div>
     </section>
   );
