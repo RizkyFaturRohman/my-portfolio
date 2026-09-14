@@ -14,8 +14,8 @@ export default function ChapterTwo() {
     { name: "F&B Landing Page", role: "Front-End", year: "2026", image: "/assets/projects/project-1.png", type: "desktop" },
     { name: "Finance Tracker", role: "Mobile App", year: "2026", image: "/assets/project-2.jpg", type: "mobile" },
     { name: "Inventory System", role: "Full Stack", year: "2025", image: "/assets/project-3.jpg", type: "desktop" },
-    { name: "Attendance System", role: "Full Stack", year: "2025", image: "/assets/project-4.jpg", type: "desktop" },
     { name: "Live Commerce", role: "Front-End", year: "2025", image: "/assets/project-5.jpg", type: "desktop" },
+    { name: "Attendance System", role: "Full Stack", year: "2025", image: "/assets/project-4.jpg", type: "desktop" },
   ];
 
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {

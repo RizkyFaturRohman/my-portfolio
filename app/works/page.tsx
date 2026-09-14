@@ -60,17 +60,16 @@ export default function Works() {
       slug: "inventory-system"
     },
     { 
+      name: "Live Commerce", role: "Front-End", year: "2025", image: "/assets/project-5.jpg", 
+      type: "desktop", colSpan: "md:col-span-3", aspect: "aspect-[21/9] md:aspect-[21/7]",
+      slug: "live-commerce"
+    },
+    { 
       name: "Attendance System", role: "Full Stack", year: "2025", image: "/assets/project-4.jpg", 
       type: "desktop", 
       colSpan: "md:col-span-3", 
       aspect: "aspect-[21/9] md:aspect-[21/7]",
       slug: "attendance-system"
-    },
-    { 
-      // Digital Village sudah diganti menjadi Live Commerce agar selaras dengan Chapter II
-      name: "Live Commerce", role: "Front-End", year: "2025", image: "/assets/project-5.jpg", 
-      type: "desktop", colSpan: "md:col-span-3", aspect: "aspect-[21/9] md:aspect-[21/7]",
-      slug: "live-commerce"
     },
   ];
 
