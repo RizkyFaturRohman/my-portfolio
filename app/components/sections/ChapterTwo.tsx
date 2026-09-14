@@ -9,12 +9,13 @@ export default function ChapterTwo() {
   const [isLeaving, setIsLeaving] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  // Perubahan: Hanya Finance Tracker yang mobile, Digital Village diganti Live Commerce
   const projects = [
     { name: "F&B Landing Page", role: "Front-End", year: "2026", image: "/assets/projects/project-1.png", type: "desktop" },
     { name: "Finance Tracker", role: "Mobile App", year: "2026", image: "/assets/project-2.jpg", type: "mobile" },
     { name: "Inventory System", role: "Full Stack", year: "2025", image: "/assets/project-3.jpg", type: "desktop" },
     { name: "Attendance System", role: "Full Stack", year: "2025", image: "/assets/project-4.jpg", type: "desktop" },
-    { name: "Digital Village", role: "Lead Dev", year: "2024", image: "/assets/project-5.jpg", type: "desktop" },
+    { name: "Live Commerce", role: "Front-End", year: "2025", image: "/assets/project-5.jpg", type: "desktop" },
   ];
 
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -63,6 +64,7 @@ export default function ChapterTwo() {
                     src={project.image} 
                     alt={project.name}
                     fill
+                    // Gambar mobile menyesuaikan ukuran, gambar desktop menutup penuh
                     className={project.type === "mobile" ? "object-contain p-8 drop-shadow-2xl" : "object-cover"}
                     sizes="(max-width: 1024px) 0vw, 400px"
                   />
@@ -106,7 +108,6 @@ export default function ChapterTwo() {
             ========================================== */}
         <div className="w-full mt-32 mb-16 relative flex justify-end items-end h-[60vh] md:h-[80vh]">
           
-          {/* Teks Penyeimbang Layout */}
           <div className="absolute top-0 left-0 text-xs font-mono uppercase tracking-widest opacity-40 max-w-xs z-20">
             <p>Visual exploration</p>
             <p className="mt-2">Detail and precision in every pixel engineered.</p>
@@ -123,7 +124,7 @@ export default function ChapterTwo() {
 
           <div className="relative w-2/3 md:w-1/3 aspect-[3/4] md:aspect-[4/5] overflow-hidden bg-[#e0dcd0] border border-[#383530]/20 z-10 -translate-x-4 translate-y-8 md:-translate-x-12 md:translate-y-12 drop-shadow-2xl">
             <Image 
-              src="/assets/project-2.jpg" // Ganti dengan gambar potret/mobile Anda
+              src="/assets/project-2.jpg" 
               alt="Visual Foreground"
               fill
               className="object-cover animate-zoom-out-in"

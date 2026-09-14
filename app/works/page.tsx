@@ -5,6 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
+// ==========================================
+// MASK REVEAL ANIMATION 
+// ==========================================
 const Reveal = ({ children, delayClass = "" }: { children: React.ReactNode, delayClass?: string }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
@@ -37,27 +40,37 @@ export default function Works() {
     return () => clearTimeout(timer);
   }, []);
 
-  
+  // DATA PROYEK (Ditambahkan properti 'slug' untuk URL rute halaman detail)
   const projects = [
     { 
       name: "F&B Landing Page", role: "Front-End", year: "2026", image: "/assets/projects/project-1.png", 
-      type: "desktop", colSpan: "md:col-span-2", aspect: "aspect-[16/9]" 
+      type: "desktop", colSpan: "md:col-span-2", aspect: "aspect-[16/9]",
+      slug: "fb-landing-page" 
     },
     { 
       name: "Finance Tracker", role: "Mobile App", year: "2026", image: "/assets/project-2.jpg", 
-      type: "mobile", colSpan: "md:col-span-1", aspect: "aspect-[3/4] lg:aspect-[4/5]" 
+      type: "mobile", colSpan: "md:col-span-1", aspect: "aspect-[3/4] lg:aspect-[4/5]",
+      slug: "finance-tracker"
     },
     { 
       name: "Inventory System", role: "Full Stack", year: "2025", image: "/assets/project-3.jpg", 
-      type: "desktop", colSpan: "md:col-span-1", aspect: "aspect-square" 
+      type: "desktop", 
+      colSpan: "md:col-span-3", // Berubah menjadi 3 kolom (Layar penuh)
+      aspect: "aspect-[21/9] md:aspect-[21/7]", // Rasio memanjang (panoramic)
+      slug: "inventory-system"
     },
     { 
       name: "Attendance System", role: "Full Stack", year: "2025", image: "/assets/project-4.jpg", 
-      type: "desktop", colSpan: "md:col-span-2", aspect: "aspect-[16/9]" 
+      type: "desktop", 
+      colSpan: "md:col-span-3", 
+      aspect: "aspect-[21/9] md:aspect-[21/7]",
+      slug: "attendance-system"
     },
     { 
-      name: "Digital Village", role: "Lead Dev", year: "2024", image: "/assets/project-5.jpg", 
-      type: "desktop", colSpan: "md:col-span-3", aspect: "aspect-[21/9] md:aspect-[21/7]" 
+      // Digital Village sudah diganti menjadi Live Commerce agar selaras dengan Chapter II
+      name: "Live Commerce", role: "Front-End", year: "2025", image: "/assets/project-5.jpg", 
+      type: "desktop", colSpan: "md:col-span-3", aspect: "aspect-[21/9] md:aspect-[21/7]",
+      slug: "live-commerce"
     },
   ];
 
@@ -88,7 +101,9 @@ export default function Works() {
         <section className="px-8 md:px-16 lg:px-32 pb-32">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
             {projects.map((project, index) => (
-              <div key={index} className={`flex flex-col group cursor-pointer ${project.colSpan}`}>
+              
+              // PERUBAHAN UTAMA: Wrapper <div> diubah menjadi <Link> dan diarahkan ke href={`/works/${project.slug}`}
+              <Link href={`/works/${project.slug}`} key={index} className={`flex flex-col group cursor-pointer ${project.colSpan}`}>
                 <Reveal delayClass={`delay-${(index % 3) * 100}`}>
                   
                   <div className={`relative w-full ${project.aspect} overflow-hidden bg-[#e0dcd0] mb-6 rounded-sm`}>
@@ -120,7 +135,8 @@ export default function Works() {
                   </div>
 
                 </Reveal>
-              </div>
+              </Link>
+
             ))}
           </div>
         </section>
