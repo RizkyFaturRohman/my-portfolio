@@ -48,24 +48,24 @@ export default function Works() {
       slug: "fb-landing-page" 
     },
     { 
-      name: "Finance Tracker", role: "Mobile App", year: "2026", image: "/assets/project-2.jpg", 
+      name: "Finance Tracker", role: "Mobile App", year: "2026", image: "/assets/projects/project-2.png", 
       type: "mobile", colSpan: "md:col-span-1", aspect: "aspect-[3/4] lg:aspect-[4/5]",
       slug: "finance-tracker"
     },
     { 
-      name: "Inventory System", role: "Full Stack", year: "2025", image: "/assets/project-3.jpg", 
+      name: "Inventory System", role: "Full Stack", year: "2025", image: "/assets/projects/project-3.png", 
       type: "desktop", 
       colSpan: "md:col-span-3", // Berubah menjadi 3 kolom (Layar penuh)
       aspect: "aspect-[21/9] md:aspect-[21/7]", // Rasio memanjang (panoramic)
       slug: "inventory-system"
     },
     { 
-      name: "Live Commerce", role: "Front-End", year: "2025", image: "/assets/project-5.jpg", 
+      name: "Live Commerce", role: "Front-End", year: "2025", image: "/assets/projects/project-4.png", 
       type: "desktop", colSpan: "md:col-span-3", aspect: "aspect-[21/9] md:aspect-[21/7]",
       slug: "live-commerce"
     },
     { 
-      name: "Attendance System", role: "Full Stack", year: "2025", image: "/assets/project-4.jpg", 
+      name: "Attendance System", role: "Full Stack", year: "2025", image: "/assets/projects/project-5.png", 
       type: "desktop", 
       colSpan: "md:col-span-3", 
       aspect: "aspect-[21/9] md:aspect-[21/7]",

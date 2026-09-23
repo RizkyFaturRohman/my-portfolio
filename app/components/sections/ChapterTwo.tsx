@@ -12,10 +12,10 @@ export default function ChapterTwo() {
   // Perubahan: Hanya Finance Tracker yang mobile, Digital Village diganti Live Commerce
   const projects = [
     { name: "F&B Landing Page", role: "Front-End", year: "2026", image: "/assets/projects/project-1.png", type: "desktop" },
-    { name: "Finance Tracker", role: "Mobile App", year: "2026", image: "/assets/project-2.jpg", type: "mobile" },
-    { name: "Inventory System", role: "Full Stack", year: "2025", image: "/assets/project-3.jpg", type: "desktop" },
-    { name: "Live Commerce", role: "Front-End", year: "2025", image: "/assets/project-5.jpg", type: "desktop" },
-    { name: "Attendance System", role: "Full Stack", year: "2025", image: "/assets/project-4.jpg", type: "desktop" },
+    { name: "Finance Tracker", role: "Mobile App", year: "2026", image: "/assets/projects/project-6.png", type: "desktop" },
+    { name: "Inventory System", role: "Full Stack", year: "2025", image: "/assets/projects/project-3.png", type: "desktop" },
+    { name: "Live Commerce", role: "Front-End", year: "2025", image: "/assets/projects/project-4.png", type: "desktop" },
+    { name: "Attendance System", role: "Full Stack", year: "2025", image: "/assets/projects/project-5.png", type: "desktop" },
   ];
 
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -65,13 +65,15 @@ export default function ChapterTwo() {
                     alt={project.name}
                     fill
                     // Gambar mobile menyesuaikan ukuran, gambar desktop menutup penuh
-                    className={project.type === "mobile" ? "object-contain p-8 drop-shadow-2xl" : "object-cover"}
-                    sizes="(max-width: 1024px) 0vw, 400px"
+                    className={project.type === "mobile" ? "object-contain p-2 md:p-4 drop-shadow-2xl scale-110" : "object-cover"}
+                    sizes="(max-width: 1080px) 0vw, 400px"
                   />
                 </div>
               ))}
-              <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${hoveredIndex !== null ? "opacity-0" : "opacity-100"}`}>
-                <span className="text-xs font-mono uppercase tracking-widest opacity-30">[ Hover project to preview ]</span>
+             <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${hoveredIndex !== null ? "opacity-0" : "opacity-100"}`}>
+                <span className="text-xs font-mono uppercase tracking-widest text-[#383530] opacity-100">
+                  [ Hover project to preview ]
+                </span>
               </div>
             </div>
           </div>
@@ -113,20 +115,24 @@ export default function ChapterTwo() {
             <p className="mt-2">Detail and precision in every pixel engineered.</p>
           </div>
 
+          {/* GAMBAR BACKGROUND */}
           <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#2a2824] rounded-sm">
             <Image 
-              src="/assets/project-3.jpg"
+              src="/assets/project1.png" 
               alt="Visual Background"
               fill
+              sizes="100vw" 
               className="object-cover opacity-60 grayscale animate-zoom-in-out"
             />
           </div>
 
+          {/* GAMBAR FOREGROUND (Finance Tracker) */}
           <div className="relative w-2/3 md:w-1/3 aspect-[3/4] md:aspect-[4/5] overflow-hidden bg-[#e0dcd0] border border-[#383530]/20 z-10 -translate-x-4 translate-y-8 md:-translate-x-12 md:translate-y-12 drop-shadow-2xl">
             <Image 
-              src="/assets/project-2.jpg" 
+              src="/assets/project2.png"
               alt="Visual Foreground"
               fill
+              sizes="(max-width: 768px) 66vw, 33vw" 
               className="object-cover animate-zoom-out-in"
             />
           </div>
